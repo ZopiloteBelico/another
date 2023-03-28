@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <title>Física</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-light" style="background-color: #40CFFF;">
+             <!--Navbar content-->
+         </nav>
+         <div class="jumbotron">
+            <h1 class="display-4">Calculadora de Física 1</h1>
+            <p class="lead"></p>
+            <hr class="my-4">
+            <p>Se desarrollan cuatro temas básicos, entre ellos, lo concerniente a las cantidades físicas, el Sistema Internacional de Unidades,
+                las magnitudes escalares y vectoriales; luego, Cinemática, en el cual se incluyen temas de movimiento rectilíneo, en los casos de velocidad y
+                de aceleración constantes, y su representación gráfica en el tiempo cuerpos en caída libre y el movimiento circular uniforme; a continuación, Dinámica,
+                que comprende a las tres leyes de Newton, los conceptos de masa y peso y el tema de rozamiento. Finalmente, se desarrollan los conceptos básicos
+                de Trabajo y Energía, con alguna de sus aplicaciones.</p>
+         </div>
+         <form id="Formulario">
+            <label for="distancia">Distancia</label>
+            <input type="text" id="distancia" name="distancia">
+            <select id="distanciaUnidad">
+                <option value="metros">Metros</option>
+                <option value="pies">Pies</option>
+            </select>
+            <br>
+            <label for="tiempo">Tiempo</label>
+            <input type="text" id="tiempo" name="tiempo">
+            <select id="tiempoUnidad">
+                <option value="segundos">Segundos</option>
+                <option value="horas">Horas</option>
+            </select>
+            <br>
+            <label for="velocidadUnidad">Unidades de Velocidad:</label>
+            <select id="velocidadUnidad">
+                <option value="metros_por_segundo">m/s</option>
+                <option value="pies_por_segundo">ft/s</option>
+                <option value="kilometros_por_hora">km/h</option>
+                <option value="millas_por_hora">mi/h</option>
+            </option>
+            </select>
+            <br>
+            <input type="button" value="Calcular" 
+            onclick="Calcular()">
+         </form>
+         <p style="color:rgb(134, 0, 0)">Velocidad: <span id="velocidad"></span></p>
+         <p style="color:rgb(5, 3, 153)">Aceleración: <span id="aceleracion"></span></p>
+         <p style="color:aliceblue">Rapidez: <span id="rapidez"></span></p>
+        </div>
+         <script>
+            function Calcular(){
+                const distancia=parseFloat (document.getElementById 
+                ('distancia').value);
+
+                console.log("la distancia es: "+distancia);
+                document.getElementById('velocidad').
+                textContent=velocidad.toFixed(2) + ' ' + distancia;
+            }
+         </script>
+    </body>
