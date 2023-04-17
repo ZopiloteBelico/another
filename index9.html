@@ -53,6 +53,105 @@
          </form>
          <p style="color:rgb(134, 0, 0)">Velocidad: <span id="velocidad"></span></p>
          <p style="color:rgb(5, 3, 153)">Aceleración: <span id="aceleracion"></span></p>
+         <p style="color:rgb(0, 0, 0)">Rapidez: <span id="rapidez"></span></p>
+        </div>
+         <script>
+            
+                /*const distancia=parseFloat (document.getElementById 
+                ('distancia').value);
+
+                console.log("la distancia es: "+distancia);
+                document.getElementById('velocidad').
+                
+                textContent=velocidad.toFixed(2) + ' ' + distancia;*/
+
+            function Calcular(){
+                //obtener los valores del formulario
+                const distancia=parseFloat (document.getElementById 
+                ('distancia').value);
+                const tiempo=parseFloat (document.getElementById 
+                ('tiempo').value);
+                const distanciaUnidad=parseFloat (document.getElementById 
+                ('distanciaUnidad').value);
+                const TiempoUnidad=parseFloat (document.getElementById 
+                ('TiempoUnidad').value);
+                const VelocidadUnidad=parseFloat (document.getElementById 
+                ('VelocidadUnidad').value);
+                //convertir unidad a sistema metrico(SI)
+                let distanciaSI = 0;
+                let tiempoSI = 0;
+                if(distanciaUnidad === 'metros'){
+                    distanciaSI = distancia; 
+                }
+                else if (distanciaUnidad === 'pies'){
+                    distanciaSI = distancia /3.281;
+                }
+                if(TiempoUnidad === 'segundos'){
+                    tiempoSI = tiempo;
+                }
+                else if (TiempoUnidad === 'horas'){
+                    tiempoSI = tiempo * 3600;
+                }
+
+                //caldular la velocidad, aceleracion y (rapidez)
+                let velocidad = 0;
+                let aceleracion = 0;
+                let rapidez = 0;
+                if(VelocidadUnidad === 'metros_por_segundo'){
+                    velocidad = distanciaSI / tiempoSI
+                    rapidez = velocidad; //no es la formula
+                    aceleracion = velocidad / tiempoSI
+                }
+                else if (VelocidadUnidad === 'pies_por_segundo'){
+                    velocidad = (distanciaSI * 3.281) / tiempoSI
+                    rapidez = velocidad; //no es la formula
+                    aceleracion = velocidad / tiempoSI
+            }
+            else if (VelocidadUnidad === 'kilometros_por_hora'){
+                    velocidad = (distanciaSI * 1000) / (tiempoSI / 3600);
+                    rapidez = velocidad; //no es la formula
+                    aceleracion = velocidad / tiempoSI
+            }
+            else if (VelocidadUnidad === 'millas_por_hora'){
+                    velocidad = (distanciaSI * 1609) / (tiempoSI / 3600);
+                    rapidez = velocidad; //no es la formula
+                    aceleracion = velocidad / tiempoSI
+            }
+            //mostrar resultados
+            let resultados = '';
+
+            document.getElementById('velocidad').textContent = 
+            velocidad.toFixed(2)+' '+VelocidadUnidad;
+            document.getElementById('aceleracion').textContent = 
+            velocidad.toFixed(2)+' '+VelocidadUnidad;
+            document.getElementById('rapidez').textContent = 
+            velocidad.toFixed(2)+' '+VelocidadUnidad;
+
+            document.getElementById('resultado').innerHTML=resultado;
+        }
+         </script>
+    </body>
+</html>
+            <input type="text" id="tiempo" name="tiempo">
+            <select id="tiempoUnidad">
+                <option value="segundos">Segundos</option>
+                <option value="horas">Horas</option>
+            </select>
+            <br>
+            <label for="velocidadUnidad">Unidades de Velocidad:</label>
+            <select id="velocidadUnidad">
+                <option value="metros_por_segundo">m/s</option>
+                <option value="pies_por_segundo">ft/s</option>
+                <option value="kilometros_por_hora">km/h</option>
+                <option value="millas_por_hora">mi/h</option>
+            </option>
+            </select>
+            <br>
+            <input type="button" value="Calcular" 
+            onclick="Calcular()">
+         </form>
+         <p style="color:rgb(134, 0, 0)">Velocidad: <span id="velocidad"></span></p>
+         <p style="color:rgb(5, 3, 153)">Aceleración: <span id="aceleracion"></span></p>
          <p style="color:aliceblue">Rapidez: <span id="rapidez"></span></p>
         </div>
          <script>
